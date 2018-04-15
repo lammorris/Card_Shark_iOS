@@ -1,0 +1,6 @@
+framework module Pods_Card_Shark_iOS {
+  umbrella header "Pods-Card_Shark_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
