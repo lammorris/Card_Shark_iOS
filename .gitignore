@@ -1,0 +1,50 @@
+# Mac OS X
+.DS_Store
+
+# Xcode
+
+## Build generated
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Carthage
+Carthage/Build
+
+## Bokor
+bokor.log
+npm-debug.log
+
+# Fastlane
+.idea
+Fastlane/README.md
+Fastlane/report.xml
+Fastlane/danger_output
+Fastlane/pod_lib_lint_output
+Fastlane/xccov_output
+Fastlane/xcode_output
+Fastlane/xcov_output
