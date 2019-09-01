@@ -6,6 +6,7 @@
 //  Copyright © 2019 Morris Lam. All rights reserved.
 //
 
+import SafariServices
 import UIKit
 
 final class LandingMenuViewController: UITableViewController {
@@ -18,8 +19,30 @@ final class LandingMenuViewController: UITableViewController {
 
     // MARK: - Methods
 
+    override init(style: UITableView.Style = .grouped) {
+        super.init(style: style)
+
+        setup()
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
+        setup()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // MARK: - Private Methods
+
+    private func setup() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        view.backgroundColor = .white
+
+        title = "Welcome"
+        navigationItem.largeTitleDisplayMode = .automatic
     }
 
     // MARK: - UITableViewDataSource
@@ -66,8 +89,12 @@ final class LandingMenuViewController: UITableViewController {
 
             onboardingCoordinator.start()
 
-        case IndexPath(row: 0, section: 1):
-            let 
+        case IndexPath(row: 1, section: 0):
+            let url = URL(string: "https://morrislam.com")!
+            let safariController = SFSafariViewController(url: url)
+            safariController.dismissButtonStyle = .close
+
+            present(safariController, animated: true)
 
         default:
             break
