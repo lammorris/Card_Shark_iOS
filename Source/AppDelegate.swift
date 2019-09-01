@@ -17,13 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let navigationController = UINavigationController(rootViewController: LandingMenuViewController())
-        navigationController.navigationBar.prefersLargeTitles = true
-
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = navigationController
+        window!.rootViewController = setupNavigationController(with: LandingMenuViewController())
         window!.makeKeyAndVisible()
 
         return true
+    }
+}
+
+extension AppDelegate {
+    func setupNavigationController(with rootController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.barTintColor = .white
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+
+        return navigationController
     }
 }
