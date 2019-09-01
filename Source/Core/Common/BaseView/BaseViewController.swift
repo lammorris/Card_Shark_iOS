@@ -16,15 +16,27 @@ class BaseViewController<RootViewType: UIView>: UIViewController {
         return view as! RootViewType
     }
 
+    // MARK: - Initialization
+
     init() {
         super.init(nibName: nil, bundle: nil)
+
+        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
+        setup()
     }
+
+    // MARK: - Methods
 
     override func loadView() {
         view = RootViewType(frame: UIScreen.main.bounds)
+    }
+
+    private func setup() {
+        navigationItem.largeTitleDisplayMode = .never
     }
 }

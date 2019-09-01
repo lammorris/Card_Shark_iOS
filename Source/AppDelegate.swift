@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        let navigationController = UINavigationController(rootViewController: LandingMenuViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.rootViewController = navigationController
+        window!.makeKeyAndVisible()
+
         return true
     }
 }
