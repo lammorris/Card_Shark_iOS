@@ -9,6 +9,7 @@
 import UIKit
 
 class BaseViewController<RootViewType: UIView>: UIViewController {
+    typealias ViewConstruction = () -> RootViewType
 
     // MARK: - Properties
 
@@ -16,24 +17,26 @@ class BaseViewController<RootViewType: UIView>: UIViewController {
         return view as! RootViewType
     }
 
+    private let viewConstruction: ViewConstruction
+
     // MARK: - Initialization
 
-    init() {
+    init(viewConstruction: @escaping ViewConstruction = { RootViewType(frame: UIScreen.main.bounds) }) {
+        self.viewConstruction = viewConstruction
+
         super.init(nibName: nil, bundle: nil)
 
         setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Methods
 
     override func loadView() {
-        view = RootViewType(frame: UIScreen.main.bounds)
+        view = viewConstruction()
     }
 
     private func setup() {
