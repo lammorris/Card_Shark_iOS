@@ -13,14 +13,8 @@ final class LandingMenuViewController: UITableViewController {
     // MARK: - Properties
 
     private let reuseIdentifier = "MenuOptionCell"
-    private let tableData = [
-        [
-            LandingMenuModel(title: "Onboarding")
-        ],
-        [
-            LandingMenuModel(title: "War")
-        ]
-    ]
+    private var coordinator: Coordinator?
+    private let tableData = LandingMenuDataSource().dataSource
 
     // MARK: - Methods
 
@@ -40,6 +34,8 @@ final class LandingMenuViewController: UITableViewController {
             return "Onboarding"
         case 1:
             return "Games"
+        case 2:
+            return "Infrastructure"
         default:
             assertionFailure("Section header has not been implemented.")
             return "Header"
@@ -63,6 +59,22 @@ final class LandingMenuViewController: UITableViewController {
     // MARK: - UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Find good way to deconstruct tableData
+        switch indexPath {
+        case IndexPath(row: 0, section: 0):
+            let onboardingCoordinator = OnboardingCoordinator(presentingViewController: self)
+            onboardingCoordinator.delegate = self
+
+            onboardingCoordinator.start()
+
+        case IndexPath(row: 0, section: 1):
+            let 
+
+        default:
+            break
+        }
     }
+}
+
+extension LandingMenuViewController: OnboardingCoordinatorDelegate {
+    func onboardingCoordinatorDidComplete(_ coordinator: OnboardingCoordinator) { }
 }

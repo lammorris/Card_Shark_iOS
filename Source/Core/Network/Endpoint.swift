@@ -13,6 +13,6 @@ protocol Endpoint {
     var validStatusCodes: [Int] { get }
     func path() throws -> String
     func queryParameters() throws -> QueryParameters
-    func headers() throws -> [Header.Field: Header.Value]
+    func headers() throws -> Headers
     func body() throws -> Body?
 }

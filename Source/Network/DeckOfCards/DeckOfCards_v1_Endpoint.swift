@@ -66,7 +66,7 @@ extension DeckOfCards.v1 {
             return queryParameters
         }
 
-        func headers() throws -> [Header.Field : Header.Value] {
+        func headers() throws -> Headers {
             switch self {
             default:
                 break
