@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		289A56148F03754990F8E4CB /* Pods_CardDeck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE70BC25FDF04893BEDAB05C /* Pods_CardDeck.framework */; };
+		BA27125522F00B05005B1753 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27125422F00B05005B1753 /* OnboardingCoordinator.swift */; };
+		BA27125722F00C7E005B1753 /* LandingMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27125622F00C7E005B1753 /* LandingMenuDataSource.swift */; };
+		BA27125922F015CC005B1753 /* OnboardingSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27125822F015CC005B1753 /* OnboardingSummaryViewController.swift */; };
+		BA27125E22F02070005B1753 /* OnboardingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27125D22F02070005B1753 /* OnboardingSummaryView.swift */; };
 		BA2F919222EEC1E70022A9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F919122EEC1E70022A9AE /* AppDelegate.swift */; };
 		BA2F919722EEC1E70022A9AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2F919522EEC1E70022A9AE /* Main.storyboard */; };
 		BA2F919922EEC1E80022A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2F919822EEC1E80022A9AE /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 		BA2F91CA22EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */; };
 		BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */; };
 		BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */; };
+		BA5AAB42231B44220078999F /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5AAB41231B44220078999F /* PortfolioViewController.swift */; };
+		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
+		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
+		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
 		D9CC4FE8A42DF62420C444D2 /* Pods_CardDeckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9431E2832A80EB2EECA22882 /* Pods_CardDeckTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +48,10 @@
 		5640BF1B70597E8CAE841F9C /* Pods-CardDeck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardDeck.release.xcconfig"; path = "Target Support Files/Pods-CardDeck/Pods-CardDeck.release.xcconfig"; sourceTree = "<group>"; };
 		9431E2832A80EB2EECA22882 /* Pods_CardDeckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardDeckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFDB89483759CBECB710BDD /* Pods-CardDeckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardDeckTests.release.xcconfig"; path = "Target Support Files/Pods-CardDeckTests/Pods-CardDeckTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA27125422F00B05005B1753 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		BA27125622F00C7E005B1753 /* LandingMenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingMenuDataSource.swift; sourceTree = "<group>"; };
+		BA27125822F015CC005B1753 /* OnboardingSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryViewController.swift; sourceTree = "<group>"; };
+		BA27125D22F02070005B1753 /* OnboardingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSummaryView.swift; sourceTree = "<group>"; };
 		BA2F918E22EEC1E70022A9AE /* CardDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2F919122EEC1E70022A9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA2F919622EEC1E70022A9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +70,10 @@
 		BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_Endpoint.swift; sourceTree = "<group>"; };
 		BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_QueryItem.swift; sourceTree = "<group>"; };
+		BA5AAB41231B44220078999F /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BAE1A07022F28EA000F44AAE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BAE1A07122F28EA000F44AAE /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C6AB20734ABA2C92895A3F2F /* Pods-CardDeck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardDeck.debug.xcconfig"; path = "Target Support Files/Pods-CardDeck/Pods-CardDeck.debug.xcconfig"; sourceTree = "<group>"; };
 		EE70BC25FDF04893BEDAB05C /* Pods_CardDeck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardDeck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +98,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA27125022F00A05005B1753 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BA2F91C322EEDEE30022A9AE /* Body.swift */,
+				BA2F91BD22EEDBE60022A9AE /* Endpoint.swift */,
+				BA2F91C122EEDED80022A9AE /* Header.swift */,
+				BA2F91BF22EEDED10022A9AE /* QueryParameters.swift */,
+				BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BA27125122F00AA2005B1753 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				BA5AAB40231B440B0078999F /* Portfolio */,
+				BA5AAB3F231B43E60078999F /* Onboarding */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		BA27126122F0225F005B1753 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BAE1A06F22F28EA000F44AAE /* BaseView */,
+				BAE1A01F22F2803500F44AAE /* Coordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		BA2F918522EEC1E70022A9AE = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +163,7 @@
 				BA2F919122EEC1E70022A9AE /* AppDelegate.swift */,
 				BA2F91BC22EEDBCA0022A9AE /* Core */,
 				BA2F91B422EEC69C0022A9AE /* Landing */,
+				BA27125122F00AA2005B1753 /* Description */,
 				BA2F91BB22EEDB350022A9AE /* Network */,
 				BA2F91B322EEC4DC0022A9AE /* Supporting Files */,
 			);
@@ -146,6 +193,7 @@
 			children = (
 				BA2F91B522EEC76C0022A9AE /* LandingMenuViewController.swift */,
 				BA2F91B922EECE270022A9AE /* LandingMenuModel.swift */,
+				BA27125622F00C7E005B1753 /* LandingMenuDataSource.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -161,11 +209,8 @@
 		BA2F91BC22EEDBCA0022A9AE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BA2F91C322EEDEE30022A9AE /* Body.swift */,
-				BA2F91BD22EEDBE60022A9AE /* Endpoint.swift */,
-				BA2F91C122EEDED80022A9AE /* Header.swift */,
-				BA2F91BF22EEDED10022A9AE /* QueryParameters.swift */,
-				BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */,
+				BA27126122F0225F005B1753 /* Common */,
+				BA27125022F00A05005B1753 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -178,6 +223,33 @@
 				BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */,
 			);
 			path = DeckOfCards;
+			sourceTree = "<group>";
+		};
+		BA5AAB3F231B43E60078999F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BA27125422F00B05005B1753 /* OnboardingCoordinator.swift */,
+				BA27125822F015CC005B1753 /* OnboardingSummaryViewController.swift */,
+				BA27125D22F02070005B1753 /* OnboardingSummaryView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BA5AAB40231B440B0078999F /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				BA5AAB41231B44220078999F /* PortfolioViewController.swift */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		BAE1A06F22F28EA000F44AAE /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				BAE1A07022F28EA000F44AAE /* BaseViewController.swift */,
+				BAE1A07122F28EA000F44AAE /* BaseView.swift */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		CC0CA584546D33EBA7DBF3F0 /* Frameworks */ = {
@@ -371,12 +443,20 @@
 				BA2F91BA22EECE270022A9AE /* LandingMenuModel.swift in Sources */,
 				BA2F91C422EEDEE30022A9AE /* Body.swift in Sources */,
 				BA2F919222EEC1E70022A9AE /* AppDelegate.swift in Sources */,
+				BA27125722F00C7E005B1753 /* LandingMenuDataSource.swift in Sources */,
+				BA27125522F00B05005B1753 /* OnboardingCoordinator.swift in Sources */,
 				BA2F91BE22EEDBE60022A9AE /* Endpoint.swift in Sources */,
+				BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */,
+				BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */,
 				BA2F91B622EEC76C0022A9AE /* LandingMenuViewController.swift in Sources */,
 				BA2F91C822EEDFF20022A9AE /* DeckOfCards.swift in Sources */,
 				BA2F91CA22EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift in Sources */,
+				BA5AAB42231B44220078999F /* PortfolioViewController.swift in Sources */,
 				BA2F91C222EEDED80022A9AE /* Header.swift in Sources */,
+				BA27125922F015CC005B1753 /* OnboardingSummaryViewController.swift in Sources */,
+				BA27125E22F02070005B1753 /* OnboardingSummaryView.swift in Sources */,
 				BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */,
+				BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */,
 				BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */,
 				BA2F91C022EEDED10022A9AE /* QueryParameters.swift in Sources */,
 			);

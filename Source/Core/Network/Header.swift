@@ -6,6 +6,8 @@
 //  Copyright © 2019 Morris Lam. All rights reserved.
 //
 
+typealias Headers = [String: String]
+
 struct Header: Codable {
     struct Field: Hashable {
         static let accept = "Accept"
