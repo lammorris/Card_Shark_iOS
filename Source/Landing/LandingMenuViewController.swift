@@ -96,6 +96,13 @@ final class LandingMenuViewController: UITableViewController {
 
             present(safariController, animated: true)
 
+        case IndexPath(row: 2, section: 0):
+            let url = URL(string: "https://photography.morrislam.com")!
+            let safariController = SFSafariViewController(url: url)
+            safariController.dismissButtonStyle = .close
+
+            present(safariController, animated: true)
+            
         default:
             break
         }
