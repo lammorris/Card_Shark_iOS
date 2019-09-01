@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BaseViewController<T: UIView>: UIViewController {
+class BaseViewController<RootViewType: UIView>: UIViewController {
 
     // MARK: - Properties
 
-    var rootView: T {
-        return view as! T
+    var rootView: RootViewType {
+        return view as! RootViewType
     }
 
     init() {
@@ -25,6 +25,6 @@ class BaseViewController<T: UIView>: UIViewController {
     }
 
     override func loadView() {
-        view = T(frame: UIScreen.main.bounds)
+        view = RootViewType(frame: UIScreen.main.bounds)
     }
 }
