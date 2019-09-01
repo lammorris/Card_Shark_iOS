@@ -102,7 +102,15 @@ final class LandingMenuViewController: UITableViewController {
             safariController.dismissButtonStyle = .close
 
             present(safariController, animated: true)
-            
+
+        case IndexPath(row: 0, section: 1):
+            guard let navigationController = navigationController else { return }
+
+            let warCoordinator = WarCoordinator(navigationController: navigationController)
+            warCoordinator.delegate = self
+
+            warCoordinator.start()
+
         default:
             break
         }
@@ -111,4 +119,8 @@ final class LandingMenuViewController: UITableViewController {
 
 extension LandingMenuViewController: OnboardingCoordinatorDelegate {
     func onboardingCoordinatorDidComplete(_ coordinator: OnboardingCoordinator) { }
+}
+
+extension LandingMenuViewController: WarCoordinatorDelegate {
+    
 }

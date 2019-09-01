@@ -25,6 +25,13 @@
 		BA2F91CA22EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */; };
 		BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */; };
 		BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */; };
+		BA69B10D231B9DF600C3D058 /* WarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */; };
+		BA69B111231B9E4500C3D058 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BA69B110231B9E4500C3D058 /* README.md */; };
+		BA69B115231B9F9000C3D058 /* WarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B114231B9F9000C3D058 /* WarViewController.swift */; };
+		BA69B117231B9FAF00C3D058 /* WarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B116231B9FAF00C3D058 /* WarView.swift */; };
+		BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */; };
+		BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11E231BA23300C3D058 /* WarSetupView.swift */; };
+		BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */; };
 		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
 		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
 		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
@@ -67,6 +74,13 @@
 		BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_Endpoint.swift; sourceTree = "<group>"; };
 		BA2F91CC22EEE1780022A9AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_QueryItem.swift; sourceTree = "<group>"; };
+		BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarCoordinator.swift; sourceTree = "<group>"; };
+		BA69B110231B9E4500C3D058 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA69B114231B9F9000C3D058 /* WarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarViewController.swift; sourceTree = "<group>"; };
+		BA69B116231B9FAF00C3D058 /* WarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarView.swift; sourceTree = "<group>"; };
+		BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupViewController.swift; sourceTree = "<group>"; };
+		BA69B11E231BA23300C3D058 /* WarSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupView.swift; sourceTree = "<group>"; };
+		BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerTextField.swift; sourceTree = "<group>"; };
 		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BAE1A07022F28EA000F44AAE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAE1A07122F28EA000F44AAE /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -114,18 +128,20 @@
 			path = Description;
 			sourceTree = "<group>";
 		};
-		BA27126122F0225F005B1753 /* Common */ = {
+		BA27126122F0225F005B1753 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA69B121231BAB5900C3D058 /* PickerTextField */,
+				BA69B120231BAB4400C3D058 /* Coordinator */,
 				BAE1A06F22F28EA000F44AAE /* BaseView */,
-				BAE1A01F22F2803500F44AAE /* Coordinator.swift */,
 			);
-			path = Common;
+			path = View;
 			sourceTree = "<group>";
 		};
 		BA2F918522EEC1E70022A9AE = {
 			isa = PBXGroup;
 			children = (
+				BA69B10F231B9E3800C3D058 /* Documentation */,
 				BA2F91B122EEC4320022A9AE /* Source */,
 				BA2F91B222EEC4470022A9AE /* Resources */,
 				BA2F91A522EEC1E80022A9AE /* CardDeckTests */,
@@ -157,8 +173,9 @@
 			children = (
 				BA2F919122EEC1E70022A9AE /* AppDelegate.swift */,
 				BA2F91BC22EEDBCA0022A9AE /* Core */,
-				BA2F91B422EEC69C0022A9AE /* Landing */,
 				BA27125122F00AA2005B1753 /* Description */,
+				BA69B10A231B9DCD00C3D058 /* Games */,
+				BA2F91B422EEC69C0022A9AE /* Landing */,
 				BA2F91BB22EEDB350022A9AE /* Network */,
 				BA2F91B322EEC4DC0022A9AE /* Supporting Files */,
 			);
@@ -203,7 +220,7 @@
 		BA2F91BC22EEDBCA0022A9AE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BA27126122F0225F005B1753 /* Common */,
+				BA27126122F0225F005B1753 /* View */,
 				BA27125022F00A05005B1753 /* Network */,
 			);
 			path = Core;
@@ -227,6 +244,50 @@
 				BA27125D22F02070005B1753 /* OnboardingSummaryView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BA69B10A231B9DCD00C3D058 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B10B231B9DE100C3D058 /* War */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		BA69B10B231B9DE100C3D058 /* War */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */,
+				BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */,
+				BA69B11E231BA23300C3D058 /* WarSetupView.swift */,
+				BA69B114231B9F9000C3D058 /* WarViewController.swift */,
+				BA69B116231B9FAF00C3D058 /* WarView.swift */,
+			);
+			path = War;
+			sourceTree = "<group>";
+		};
+		BA69B10F231B9E3800C3D058 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B110231B9E4500C3D058 /* README.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		BA69B120231BAB4400C3D058 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BAE1A01F22F2803500F44AAE /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BA69B121231BAB5900C3D058 /* PickerTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */,
+			);
+			path = PickerTextField;
 			sourceTree = "<group>";
 		};
 		BAE1A06F22F28EA000F44AAE /* BaseView */ = {
@@ -342,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA69B111231B9E4500C3D058 /* README.md in Resources */,
 				BA2F919C22EEC1E80022A9AE /* LaunchScreen.storyboard in Resources */,
 				BA2F919922EEC1E80022A9AE /* Assets.xcassets in Resources */,
 			);
@@ -426,23 +488,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2F91BA22EECE270022A9AE /* LandingMenuModel.swift in Sources */,
+				BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */,
 				BA2F91C422EEDEE30022A9AE /* Body.swift in Sources */,
 				BA2F919222EEC1E70022A9AE /* AppDelegate.swift in Sources */,
+				BA69B115231B9F9000C3D058 /* WarViewController.swift in Sources */,
 				BA27125722F00C7E005B1753 /* LandingMenuDataSource.swift in Sources */,
 				BA27125522F00B05005B1753 /* OnboardingCoordinator.swift in Sources */,
+				BA69B10D231B9DF600C3D058 /* WarCoordinator.swift in Sources */,
 				BA2F91BE22EEDBE60022A9AE /* Endpoint.swift in Sources */,
 				BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */,
 				BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */,
 				BA2F91B622EEC76C0022A9AE /* LandingMenuViewController.swift in Sources */,
 				BA2F91C822EEDFF20022A9AE /* DeckOfCards.swift in Sources */,
 				BA2F91CA22EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift in Sources */,
+				BA69B117231B9FAF00C3D058 /* WarView.swift in Sources */,
 				BA2F91C222EEDED80022A9AE /* Header.swift in Sources */,
+				BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */,
 				BA27125922F015CC005B1753 /* OnboardingSummaryViewController.swift in Sources */,
 				BA27125E22F02070005B1753 /* OnboardingSummaryView.swift in Sources */,
 				BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */,
 				BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */,
 				BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */,
 				BA2F91C022EEDED10022A9AE /* QueryParameters.swift in Sources */,
+				BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
