@@ -150,4 +150,8 @@ extension WarSetupView: NumberPickerTextFieldDelegate {
     func numberPickerTextField(_ textField: NumberPickerTextField, didUpdate number: Int) {
         animateShowPlayerLabels(numberOfPlayers: number)
     }
+
+    func numberPickerTextFieldDidComplete(_ textField: NumberPickerTextField) {
+        textField.resignFirstResponder()
+    }
 }

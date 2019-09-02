@@ -10,6 +10,7 @@ import UIKit
 
 protocol NumberPickerTextFieldDelegate: AnyObject {
     func numberPickerTextField(_ textField: NumberPickerTextField, didUpdate number: Int)
+    func numberPickerTextFieldDidComplete(_ textField: NumberPickerTextField)
 }
 
 final class NumberPickerTextField: UITextField {
@@ -36,8 +37,19 @@ final class NumberPickerTextField: UITextField {
 
         super.init(frame: .zero)
 
+        let toolBar: UIToolbar = {
+            let view = UIToolbar()
+            let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let button = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
+            view.setItems([flexButton, button], animated: true)
+            view.sizeToFit()
+
+            return view
+        }()
+
         placeholder = placeholderText
         inputView = pickerField
+        inputAccessoryView = toolBar
 
         pickerField.delegate = self
         pickerField.dataSource = self
@@ -47,7 +59,11 @@ final class NumberPickerTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Methods
+    // MARK: - Private Methods
+
+    @objc private func doneTapped() {
+        numberPickerDelegate?.numberPickerTextFieldDidComplete(self)
+    }
 }
 
 extension NumberPickerTextField: UIPickerViewDataSource {
