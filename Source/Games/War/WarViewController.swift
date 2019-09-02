@@ -8,14 +8,26 @@
 
 import UIKit
 
+protocol WarViewControllerDelegate: AnyObject { }
+
 final class WarViewController: BaseViewController<WarView> {
 
     // MARK: - Properties
 
+    weak var delegate: WarViewControllerDelegate?
+
+    private let reuseIdentifier = "PlayerCell"
+    private let players: Set<Player>
+
     // MARK: - Initialization
 
-    init() {
+    init(players: Set<Player>) {
+        self.players = players
+
         super.init()
+
+        rootView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        rootView.collectionView.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,4 +37,18 @@ final class WarViewController: BaseViewController<WarView> {
     // MARK: - Methods
 
     // MARK: - Private Methods
+}
+
+extension WarViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return players.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+}
+
+extension WarViewController: UICollectionViewDelegate {
+
 }
