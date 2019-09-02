@@ -32,6 +32,7 @@
 		BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */; };
 		BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11E231BA23300C3D058 /* WarSetupView.swift */; };
 		BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */; };
+		BA69B125231CFD9E00C3D058 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B124231CFD9E00C3D058 /* Player.swift */; };
 		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
 		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
 		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
@@ -81,6 +82,7 @@
 		BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupViewController.swift; sourceTree = "<group>"; };
 		BA69B11E231BA23300C3D058 /* WarSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupView.swift; sourceTree = "<group>"; };
 		BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerTextField.swift; sourceTree = "<group>"; };
+		BA69B124231CFD9E00C3D058 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BAE1A07022F28EA000F44AAE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAE1A07122F28EA000F44AAE /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		BA69B10B231B9DE100C3D058 /* War */ = {
 			isa = PBXGroup;
 			children = (
+				BA69B126231CFDA300C3D058 /* Model */,
 				BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */,
 				BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */,
 				BA69B11E231BA23300C3D058 /* WarSetupView.swift */,
@@ -288,6 +291,14 @@
 				BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */,
 			);
 			path = PickerTextField;
+			sourceTree = "<group>";
+		};
+		BA69B126231CFDA300C3D058 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B124231CFD9E00C3D058 /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BAE1A06F22F28EA000F44AAE /* BaseView */ = {
@@ -505,6 +516,7 @@
 				BA2F91C222EEDED80022A9AE /* Header.swift in Sources */,
 				BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */,
 				BA27125922F015CC005B1753 /* OnboardingSummaryViewController.swift in Sources */,
+				BA69B125231CFD9E00C3D058 /* Player.swift in Sources */,
 				BA27125E22F02070005B1753 /* OnboardingSummaryView.swift in Sources */,
 				BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */,
 				BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */,

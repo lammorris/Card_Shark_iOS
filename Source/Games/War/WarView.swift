@@ -12,11 +12,28 @@ final class WarView: BaseView {
 
     // MARK: - Properties
 
-    private let collectionView: UICollectionView
+    let collectionView: UICollectionView
+
+    private let closeButton: UIButton
+    private let nextRoundButton: UIButton
 
     // MARK: - Initialization
 
     override init(frame: CGRect) {
+        closeButton = {
+            let view = UIButton()
+            view.setTitle("Close", for: .normal)
+
+            return view
+        }()
+
+        nextRoundButton = {
+            let view = UIButton()
+            view.setTitle("Next Round", for: .normal)
+
+            return view
+        }()
+
         collectionView = {
             let view = UICollectionView()
 
@@ -35,12 +52,16 @@ final class WarView: BaseView {
     override func constructSubviewHierarchy() {
         super.constructSubviewHierarchy()
 
+        addSubview(closeButton)
+        addSubview(nextRoundButton)
         addSubview(collectionView)
     }
 
     override func constructSubviewLayoutConstraints() {
         super.constructSubviewLayoutConstraints()
 
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        nextRoundButton.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([

@@ -86,6 +86,7 @@ final class LandingMenuViewController: UITableViewController {
         case IndexPath(row: 0, section: 0):
             let onboardingCoordinator = OnboardingCoordinator(presentingViewController: self)
             onboardingCoordinator.delegate = self
+            coordinator = onboardingCoordinator
 
             onboardingCoordinator.start()
 
@@ -108,6 +109,7 @@ final class LandingMenuViewController: UITableViewController {
 
             let warCoordinator = WarCoordinator(navigationController: navigationController)
             warCoordinator.delegate = self
+            coordinator = warCoordinator
 
             warCoordinator.start()
 
@@ -118,9 +120,13 @@ final class LandingMenuViewController: UITableViewController {
 }
 
 extension LandingMenuViewController: OnboardingCoordinatorDelegate {
-    func onboardingCoordinatorDidComplete(_ coordinator: OnboardingCoordinator) { }
+    func onboardingCoordinatorDidComplete(_ coordinator: OnboardingCoordinator) {
+        self.coordinator = nil
+    }
 }
 
 extension LandingMenuViewController: WarCoordinatorDelegate {
-    
+    func warCoordinatorDidComplete(_ coordinator: WarCoordinator) {
+        self.coordinator = nil
+    }
 }

@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol WarCoordinatorDelegate: AnyObject { }
+protocol WarCoordinatorDelegate: AnyObject {
+    func warCoordinatorDidComplete(_ coordinator: WarCoordinator)
+}
 
 final class WarCoordinator: Coordinator {
 
@@ -18,6 +20,7 @@ final class WarCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let rangeOfPlayers: [Int] = Array(2...4)
+    private var viewController: UIViewController?
 
     // MARK: - Initialization
 
@@ -31,9 +34,28 @@ final class WarCoordinator: Coordinator {
 
     func start() {
         let warSetupViewController = WarSetupViewController(rangeOfPlayers: rangeOfPlayers)
+        warSetupViewController.delegate = self
 
         navigationController.pushViewController(warSetupViewController, animated: true)
     }
 
     // MARK: - Private Methods
+}
+
+extension WarCoordinator: WarSetupViewControllerDelegate {
+    func warSetupViewController(_ viewController: WarSetupViewController, didComplete playerNames: [String]) {
+        let players: Set<Player> = Set(playerNames.map {
+            // TODO: Make network request here to create game and parse cards
+            Player(name: $0, cardsRemaining: 1, activeCard: nil)
+        })
+
+        let warViewController = WarViewController(players: players)
+        warViewController.delegate = self
+
+        navigationController.present(warViewController, animated: true)
+    }
+}
+
+extension WarCoordinator: WarViewControllerDelegate {
+    
 }
