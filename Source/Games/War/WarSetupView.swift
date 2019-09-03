@@ -106,7 +106,7 @@ final class WarSetupView: BaseView {
             startButton.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor),
             startButton.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
             startButton.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
-            startButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Layout.margin)
+            startButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 

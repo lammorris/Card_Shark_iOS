@@ -33,6 +33,7 @@
 		BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11E231BA23300C3D058 /* WarSetupView.swift */; };
 		BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */; };
 		BA69B125231CFD9E00C3D058 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B124231CFD9E00C3D058 /* Player.swift */; };
+		BA69B128231DFEDE00C3D058 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B127231DFEDE00C3D058 /* PlayerCell.swift */; };
 		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
 		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
 		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
@@ -83,6 +84,7 @@
 		BA69B11E231BA23300C3D058 /* WarSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupView.swift; sourceTree = "<group>"; };
 		BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerTextField.swift; sourceTree = "<group>"; };
 		BA69B124231CFD9E00C3D058 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BA69B127231DFEDE00C3D058 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BAE1A07022F28EA000F44AAE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAE1A07122F28EA000F44AAE /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				BA69B11E231BA23300C3D058 /* WarSetupView.swift */,
 				BA69B114231B9F9000C3D058 /* WarViewController.swift */,
 				BA69B116231B9FAF00C3D058 /* WarView.swift */,
+				BA69B127231DFEDE00C3D058 /* PlayerCell.swift */,
 			);
 			path = War;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2F91BA22EECE270022A9AE /* LandingMenuModel.swift in Sources */,
+				BA69B128231DFEDE00C3D058 /* PlayerCell.swift in Sources */,
 				BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */,
 				BA2F91C422EEDEE30022A9AE /* Body.swift in Sources */,
 				BA2F919222EEC1E70022A9AE /* AppDelegate.swift in Sources */,

@@ -44,10 +44,10 @@ final class WarCoordinator: Coordinator {
 
 extension WarCoordinator: WarSetupViewControllerDelegate {
     func warSetupViewController(_ viewController: WarSetupViewController, didComplete playerNames: [String]) {
-        let players: Set<Player> = Set(playerNames.map {
+        let players: [Player] = playerNames.map {
             // TODO: Make network request here to create game and parse cards
             Player(name: $0, cardsRemaining: 1, activeCard: nil)
-        })
+        }
 
         let warViewController = WarViewController(players: players)
         warViewController.delegate = self
@@ -57,5 +57,7 @@ extension WarCoordinator: WarSetupViewControllerDelegate {
 }
 
 extension WarCoordinator: WarViewControllerDelegate {
-    
+    func warViewControllerDidComplete(_ viewController: WarViewController) {
+        viewController.dismiss(animated: true)
+    }
 }
