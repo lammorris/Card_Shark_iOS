@@ -34,6 +34,10 @@
 		BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */; };
 		BA69B125231CFD9E00C3D058 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B124231CFD9E00C3D058 /* Player.swift */; };
 		BA69B128231DFEDE00C3D058 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B127231DFEDE00C3D058 /* PlayerCell.swift */; };
+		BA69B12B231E0C1C00C3D058 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B12A231E0C1C00C3D058 /* Card.swift */; };
+		BA69B12D231E0FE000C3D058 /* DeckOfCards_v1_Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B12C231E0FE000C3D058 /* DeckOfCards_v1_Provider.swift */; };
+		BA69B12F231E0FEE00C3D058 /* DeckOfCards_v1_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B12E231E0FEE00C3D058 /* DeckOfCards_v1_Service.swift */; };
+		BA69B131231E139B00C3D058 /* DeckOfCardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B130231E139B00C3D058 /* DeckOfCardsResponse.swift */; };
 		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
 		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
 		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
@@ -85,6 +89,10 @@
 		BA69B122231BAB6400C3D058 /* NumberPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerTextField.swift; sourceTree = "<group>"; };
 		BA69B124231CFD9E00C3D058 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BA69B127231DFEDE00C3D058 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		BA69B12A231E0C1C00C3D058 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BA69B12C231E0FE000C3D058 /* DeckOfCards_v1_Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_Provider.swift; sourceTree = "<group>"; };
+		BA69B12E231E0FEE00C3D058 /* DeckOfCards_v1_Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_Service.swift; sourceTree = "<group>"; };
+		BA69B130231E139B00C3D058 /* DeckOfCardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsResponse.swift; sourceTree = "<group>"; };
 		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BAE1A07022F28EA000F44AAE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAE1A07122F28EA000F44AAE /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -233,9 +241,12 @@
 		BA2F91CE22EEE45D0022A9AE /* DeckOfCards */ = {
 			isa = PBXGroup;
 			children = (
-				BA2F91C722EEDFF20022A9AE /* DeckOfCards.swift */,
+				BA69B129231E0C0700C3D058 /* Model */,
 				BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */,
 				BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */,
+				BA2F91C722EEDFF20022A9AE /* DeckOfCards.swift */,
+				BA69B12C231E0FE000C3D058 /* DeckOfCards_v1_Provider.swift */,
+				BA69B12E231E0FEE00C3D058 /* DeckOfCards_v1_Service.swift */,
 			);
 			path = DeckOfCards;
 			sourceTree = "<group>";
@@ -300,6 +311,15 @@
 			isa = PBXGroup;
 			children = (
 				BA69B124231CFD9E00C3D058 /* Player.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA69B129231E0C0700C3D058 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA69B12A231E0C1C00C3D058 /* Card.swift */,
+				BA69B130231E139B00C3D058 /* DeckOfCardsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2F91BA22EECE270022A9AE /* LandingMenuModel.swift in Sources */,
+				BA69B12D231E0FE000C3D058 /* DeckOfCards_v1_Provider.swift in Sources */,
 				BA69B128231DFEDE00C3D058 /* PlayerCell.swift in Sources */,
 				BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */,
 				BA2F91C422EEDEE30022A9AE /* Body.swift in Sources */,
@@ -511,6 +532,7 @@
 				BA27125522F00B05005B1753 /* OnboardingCoordinator.swift in Sources */,
 				BA69B10D231B9DF600C3D058 /* WarCoordinator.swift in Sources */,
 				BA2F91BE22EEDBE60022A9AE /* Endpoint.swift in Sources */,
+				BA69B12B231E0C1C00C3D058 /* Card.swift in Sources */,
 				BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */,
 				BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */,
 				BA2F91B622EEC76C0022A9AE /* LandingMenuViewController.swift in Sources */,
@@ -523,8 +545,10 @@
 				BA69B125231CFD9E00C3D058 /* Player.swift in Sources */,
 				BA27125E22F02070005B1753 /* OnboardingSummaryView.swift in Sources */,
 				BA2F91CD22EEE1780022A9AE /* HTTPMethod.swift in Sources */,
+				BA69B131231E139B00C3D058 /* DeckOfCardsResponse.swift in Sources */,
 				BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */,
 				BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */,
+				BA69B12F231E0FEE00C3D058 /* DeckOfCards_v1_Service.swift in Sources */,
 				BA2F91C022EEDED10022A9AE /* QueryParameters.swift in Sources */,
 				BA69B123231BAB6400C3D058 /* NumberPickerTextField.swift in Sources */,
 			);

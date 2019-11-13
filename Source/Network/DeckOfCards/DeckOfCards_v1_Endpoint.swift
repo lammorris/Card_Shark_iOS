@@ -9,7 +9,7 @@
 import Foundation
 
 extension DeckOfCards.v1 {
-    enum Deck: Endpoint {
+    enum DeckOfCardsEndpoint: Endpoint {
         case shuffle(queryItem: QueryItem)
         case draw(deckID: String, queryItem: QueryItem)
         case reshuffle(deckID: String)
