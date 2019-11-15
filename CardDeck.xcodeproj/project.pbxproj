@@ -341,6 +341,7 @@
 			buildConfigurationList = BA2F91AB22EEC1E80022A9AE /* Build configuration list for PBXNativeTarget "CardDeck" */;
 			buildPhases = (
 				0F9AFD3E38A6ECF22F0447FC /* [CP] Check Pods Manifest.lock */,
+				BA249CE4237EAAA10098FE07 /* SwiftLint */,
 				BA2F918A22EEC1E70022A9AE /* Sources */,
 				BA2F918B22EEC1E70022A9AE /* Frameworks */,
 				BA2F918C22EEC1E70022A9AE /* Resources */,
@@ -492,6 +493,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardDeck/Pods-CardDeck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA249CE4237EAAA10098FE07 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo ${PODS_ROOT}\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
