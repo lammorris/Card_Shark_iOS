@@ -1,6 +1,0 @@
-framework module Pods_CardDeck {
-  umbrella header "Pods-CardDeck-umbrella.h"
-
-  export *
-  module * { export * }
-}

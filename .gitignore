@@ -48,3 +48,7 @@ Fastlane/pod_lib_lint_output
 Fastlane/xccov_output
 Fastlane/xcode_output
 Fastlane/xcov_output
+
+# Pods
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+Pods/
