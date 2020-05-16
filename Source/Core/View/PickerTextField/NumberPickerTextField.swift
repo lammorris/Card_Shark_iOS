@@ -38,7 +38,7 @@ final class NumberPickerTextField: UITextField {
         super.init(frame: .zero)
 
         let toolBar: UIToolbar = {
-            let view = UIToolbar()
+            let view = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
             let button = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
             view.setItems([flexButton, button], animated: true)

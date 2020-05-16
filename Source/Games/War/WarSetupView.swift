@@ -8,8 +8,11 @@
 
 import UIKit
 
-final class WarSetupView: BaseView {
+protocol WarSetupViewDelegate: AnyObject {
+    func warSetupView(_ view: WarSetupView, didUpdatePlayerCount count: Int)
+}
 
+final class WarSetupView: BaseView {
     private struct Layout {
         static let containerSpacing: CGFloat = 8.0
         static let margin: CGFloat = 20
@@ -18,10 +21,12 @@ final class WarSetupView: BaseView {
 
     // MARK: - Properties
 
-    weak var delegate: UITextFieldDelegate?
+    weak var delegate: (UITextFieldDelegate & WarSetupViewDelegate)?
 
     let startButton: UIButton
-    var selectedNumberOfPlayers: Int { return playersFieldSelector.selectedValue }
+    var selectedNumberOfPlayers: Int {
+        return playersFieldSelector.selectedValue
+    }
 
     private let rangeOfPlayers: [Int]
     private let playersSelectionContainer: UIStackView
@@ -63,8 +68,10 @@ final class WarSetupView: BaseView {
 
         startButton = {
             let view = UIButton()
-            view.setTitle("Start!", for: .normal)
+            view.isEnabled = false
+            view.setTitle("Start", for: .normal)
             view.setTitleColor(view.tintColor, for: .normal)
+            view.setTitleColor(.systemRed, for: .disabled)
 
             return view
         }()
@@ -110,6 +117,19 @@ final class WarSetupView: BaseView {
         ])
     }
 
+    // MARK: - Methods
+
+    func update(playersCount: Int) {
+        playersFieldSelector.text = String(playersCount)
+        animateShowPlayerLabels(numberOfPlayers: playersCount)
+    }
+
+    func resignAllResponders() {
+        playerNamesContainerView.arrangedSubviews.forEach { labeledTextField in
+            labeledTextField.subviews.forEach({ $0.resignFirstResponder() })
+        }
+    }
+
     // MARK: - Private Methods
 
     private func animateShowPlayerLabels(numberOfPlayers: Int) {
@@ -137,6 +157,7 @@ final class WarSetupView: BaseView {
         let textField = UITextField()
         textField.placeholder = "Name"
         textField.delegate = delegate
+        textField.autocorrectionType = .no
 
         let view = UIStackView(arrangedSubviews: [label, textField])
         view.axis = .vertical
@@ -149,6 +170,7 @@ final class WarSetupView: BaseView {
 extension WarSetupView: NumberPickerTextFieldDelegate {
     func numberPickerTextField(_ textField: NumberPickerTextField, didUpdate number: Int) {
         animateShowPlayerLabels(numberOfPlayers: number)
+        delegate?.warSetupView(self, didUpdatePlayerCount: number)
     }
 
     func numberPickerTextFieldDidComplete(_ textField: NumberPickerTextField) {

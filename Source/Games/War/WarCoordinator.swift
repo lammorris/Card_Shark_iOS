@@ -24,9 +24,7 @@ final class WarCoordinator: Coordinator {
 
     // MARK: - Initialization
 
-    init(
-        navigationController: UINavigationController)
-    {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 

@@ -27,6 +27,10 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
 
         rootView.delegate = self
         rootView.startButton.addTarget(self, action: #selector(didTapStart), for: .touchUpInside)
+
+        if let defaultPlayers = rangeOfPlayers.first {
+            rootView.update(playersCount: defaultPlayers)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -45,20 +49,27 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
     // MARK: - Private Methods
 
     @objc private func didTapStart() {
-        guard players.count == rootView.selectedNumberOfPlayers else {
-            // Throw alert here for filling all player names
-            return
-        }
-
+        rootView.resignAllResponders()
         delegate?.warSetupViewController(self, didComplete: Array(players.values))
     }
 }
 
+extension WarSetupViewController: WarSetupViewDelegate {
+    func warSetupView(_ view: WarSetupView, didUpdatePlayerCount count: Int) {
+        players.removeAll()
+    }
+}
+
 extension WarSetupViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let name = textField.text, name.isEmpty == false else {
-            // Throw alert here for empty player name
+            rootView.startButton.isEnabled = false
+            players.removeValue(forKey: textField.hashValue)
             return
+        }
+
+        if players.count == rootView.selectedNumberOfPlayers {
+            rootView.startButton.isEnabled = true
         }
 
         players[textField.hashValue] = name
