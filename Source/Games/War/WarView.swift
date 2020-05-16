@@ -87,7 +87,7 @@ final class WarView: BaseView {
             nextRoundButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: Layout.margin),
             nextRoundButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             nextRoundButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            nextRoundButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            nextRoundButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

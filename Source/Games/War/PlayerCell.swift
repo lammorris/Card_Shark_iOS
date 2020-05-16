@@ -81,6 +81,8 @@ final class PlayerCell: UICollectionViewCell {
     // MARK: - Methods
 
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
         currentCardImage.image = nil
         playerNameLabel.text = nil
         remainingCardLabel.text = nil

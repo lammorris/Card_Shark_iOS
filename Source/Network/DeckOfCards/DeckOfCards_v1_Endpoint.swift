@@ -56,7 +56,7 @@ extension DeckOfCards.v1 {
         }
 
         func queryParameters() throws -> QueryParameters {
-            var queryParameters: QueryParameters = [:]
+            let queryParameters: QueryParameters = [:]
 
             switch self {
             default:
