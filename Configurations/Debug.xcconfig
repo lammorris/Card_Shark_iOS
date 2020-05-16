@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  CardDeck
+//
+//  Created by Lam, Morris on 5/16/20.
+//  Copyright © 2020 Morris Lam. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Common.xcconfig"
+
+// Build Info
+APP_NAME = $(inherited) Δ

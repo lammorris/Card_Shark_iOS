@@ -12,7 +12,9 @@
 		BAE1A07322F28EA000F44AAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07122F28EA000F44AAE /* BaseView.swift */; };
 		BAE1A07222F28EA000F44AAE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A07022F28EA000F44AAE /* BaseViewController.swift */; };
 		BA2F91C422EEDEE30022A9AE /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91C322EEDEE30022A9AE /* Body.swift */; };
+		C2FFCA282470AEA40035E4D1 /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C2FFCA252470AEA40035E4D1 /* Common.xcconfig */; };
 		BAE1A02222F2803600F44AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1A01F22F2803500F44AAE /* Coordinator.swift */; };
+		C2FFCA292470AEA40035E4D1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C2FFCA262470AEA40035E4D1 /* Debug.xcconfig */; };
 		BA2F91C822EEDFF20022A9AE /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91C722EEDFF20022A9AE /* DeckOfCards.swift */; };
 		BA2F91CA22EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */; };
 		BA2F91D022EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */; };
@@ -33,6 +35,7 @@
 		D9CC4FE8A42DF62420C444D2 /* Pods_CardDeckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9431E2832A80EB2EECA22882 /* Pods_CardDeckTests.framework */; };
 		BA2F91C022EEDED10022A9AE /* QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F91BF22EEDED10022A9AE /* QueryParameters.swift */; };
 		BA69B111231B9E4500C3D058 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BA69B110231B9E4500C3D058 /* README.md */; };
+		C2FFCA2A2470AEA40035E4D1 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C2FFCA272470AEA40035E4D1 /* Release.xcconfig */; };
 		BA69B10D231B9DF600C3D058 /* WarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */; };
 		BA69B11F231BA23300C3D058 /* WarSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11E231BA23300C3D058 /* WarSetupView.swift */; };
 		BA69B11D231BA21C00C3D058 /* WarSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */; };
@@ -59,7 +62,9 @@
 		BA2F91C322EEDEE30022A9AE /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		BA2F918E22EEC1E70022A9AE /* CardDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2F91A222EEC1E80022A9AE /* CardDeckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardDeckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2FFCA252470AEA40035E4D1 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		BAE1A01F22F2803500F44AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C2FFCA262470AEA40035E4D1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BA2F91C722EEDFF20022A9AE /* DeckOfCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
 		BA2F91C922EEE0730022A9AE /* DeckOfCards_v1_Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_Endpoint.swift; sourceTree = "<group>"; };
 		BA2F91CF22EEE49A0022A9AE /* DeckOfCards_v1_QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards_v1_QueryItem.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		9431E2832A80EB2EECA22882 /* Pods_CardDeckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardDeckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2F91BF22EEDED10022A9AE /* QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameters.swift; sourceTree = "<group>"; };
 		BA69B110231B9E4500C3D058 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C2FFCA272470AEA40035E4D1 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		BA69B10C231B9DF600C3D058 /* WarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarCoordinator.swift; sourceTree = "<group>"; };
 		BA69B11E231BA23300C3D058 /* WarSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupView.swift; sourceTree = "<group>"; };
 		BA69B11C231BA21C00C3D058 /* WarSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarSetupViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2F91A522EEC1E80022A9AE /* CardDeckTests */,
+				C2FFCA242470AEA40035E4D1 /* Configurations */,
 				BA69B10F231B9E3800C3D058 /* Documentation */,
 				CC0CA584546D33EBA7DBF3F0 /* Frameworks */,
 				EEA2C3A06B01F4A5334F2504 /* Pods */,
@@ -313,6 +320,16 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		C2FFCA242470AEA40035E4D1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C2FFCA252470AEA40035E4D1 /* Common.xcconfig */,
+				C2FFCA262470AEA40035E4D1 /* Debug.xcconfig */,
+				C2FFCA272470AEA40035E4D1 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		CC0CA584546D33EBA7DBF3F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,8 +437,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2F919922EEC1E80022A9AE /* Assets.xcassets in Resources */,
+				C2FFCA282470AEA40035E4D1 /* Common.xcconfig in Resources */,
+				C2FFCA292470AEA40035E4D1 /* Debug.xcconfig in Resources */,
 				BA2F919C22EEC1E80022A9AE /* LaunchScreen.storyboard in Resources */,
 				BA69B111231B9E4500C3D058 /* README.md in Resources */,
+				C2FFCA2A2470AEA40035E4D1 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +551,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n# xUnique.sh\n\nRED='\\033[0;31m'\nGREEN='\\033[0;32m'\nNC='\\033[0m' # No Color\n\n# Sort Xcode project file\nxunique -p -s \"${PROJECT_FILE_PATH}/project.pbxproj\" &< /dev/null\n\nif git diff --quiet \"${PROJECT_FILE_PATH}/project.pbxproj\"; then\n    echo \"${GREEN}No project file changes were found${NC}\"\nelse \n    echo \"${RED}Project file was sorted and changes have been staged${NC}\"\n    git add \"${PROJECT_FILE_PATH}/project.pbxproj\"\nfi\n";
+			shellScript = "#!/bin/bash\n# xUnique.sh\n\n# Sort Xcode project file\nxunique -p -s \"${PROJECT_FILE_PATH}/project.pbxproj\" &< /dev/null\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -600,6 +620,7 @@
 /* Begin XCBuildConfiguration section */
 		BA2F91A922EEC1E80022A9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FFCA262470AEA40035E4D1 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -649,7 +670,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -661,6 +681,7 @@
 		};
 		BA2F91AA22EEC1E80022A9AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FFCA272470AEA40035E4D1 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -704,7 +725,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
