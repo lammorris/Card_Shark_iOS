@@ -36,6 +36,8 @@ final class WarSetupView: BaseView {
     private let playerNamesContainerView: UIStackView
     private let buttonContainer: UIStackView
 
+    private var bottomConstraint: NSLayoutConstraint?
+
     // MARK: - Initialization
 
     init(rangeOfPlayers: [Int]) {
@@ -115,6 +117,8 @@ final class WarSetupView: BaseView {
         buttonContainer.translatesAutoresizingMaskIntoConstraints = false
         startButton.translatesAutoresizingMaskIntoConstraints = false
 
+        bottomConstraint = buttonContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+
         NSLayoutConstraint.activate([
             playersSelectionContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Layout.margin),
             playersSelectionContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Layout.margin),
@@ -124,10 +128,10 @@ final class WarSetupView: BaseView {
             playerNamesContainerView.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
             playerNamesContainerView.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
 
-            buttonContainer.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor),
+            buttonContainer.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor, constant: Layout.containerSpacing),
             buttonContainer.leadingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.leadingAnchor),
             buttonContainer.trailingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.trailingAnchor),
-            buttonContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            bottomConstraint!,
             buttonContainer.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
 
             startButton.heightAnchor.constraint(equalToConstant: Layout.buttonSize),
@@ -142,10 +146,33 @@ final class WarSetupView: BaseView {
         animateShowPlayerLabels(numberOfPlayers: playersCount)
     }
 
-    func resignAllResponders() {
+    @objc func resignAllResponders() {
         playersFieldSelector.resignFirstResponder()
         playerNamesContainerView.arrangedSubviews.forEach { labeledTextField in
             labeledTextField.subviews.forEach({ $0.resignFirstResponder() })
+        }
+    }
+
+    @objc func keyboardFrameDidChange(notification: NSNotification) {
+        guard
+            let info = notification.userInfo,
+            let animationDuration = (info[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
+        else { return }
+
+        if
+            notification.name == UIResponder.keyboardWillShowNotification,
+            let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
+            bottomConstraint?.constant == 0
+        {
+            self.bottomConstraint?.constant = -keyboardHeight
+            UIView.animate(withDuration: animationDuration) {
+                self.layoutIfNeeded()
+            }
+        } else if notification.name == UIResponder.keyboardWillHideNotification {
+            self.bottomConstraint?.constant = 0
+            UIView.animate(withDuration: animationDuration) {
+                self.layoutIfNeeded()
+            }
         }
     }
 

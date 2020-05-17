@@ -31,6 +31,20 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
         if let defaultPlayers = rangeOfPlayers.first {
             rootView.update(playersCount: defaultPlayers)
         }
+
+        NotificationCenter.default.addObserver(
+            rootView,
+            selector: #selector(rootView.keyboardFrameDidChange),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            rootView,
+            selector: #selector(rootView.keyboardFrameDidChange),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -51,16 +65,12 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
     // MARK: - Private Methods
 
     @objc private func didTapStart() {
-        resignResponders()
+        rootView.resignAllResponders()
         delegate?.warSetupViewController(self, didComplete: Array(players.values))
     }
 
-    @objc private func resignResponders() {
-        rootView.resignAllResponders()
-    }
-
     private func addGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(resignResponders))
+        let tapGesture = UITapGestureRecognizer(target: rootView, action: #selector(rootView.resignAllResponders))
         rootView.addGestureRecognizer(tapGesture)
     }
 }
