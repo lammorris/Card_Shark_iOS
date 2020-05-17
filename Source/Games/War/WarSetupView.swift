@@ -17,6 +17,7 @@ final class WarSetupView: BaseView {
         static let containerSpacing: CGFloat = 8.0
         static let margin: CGFloat = 20
         static let animationTiming: TimeInterval = TimeInterval(exactly: 0.5)!
+        static let buttonSize: CGFloat = 72
     }
 
     // MARK: - Properties
@@ -33,6 +34,7 @@ final class WarSetupView: BaseView {
     private let playersLabel: UILabel
     private let playersFieldSelector: NumberPickerTextField
     private let playerNamesContainerView: UIStackView
+    private let buttonContainer: UIStackView
 
     // MARK: - Initialization
 
@@ -66,12 +68,20 @@ final class WarSetupView: BaseView {
             return view
         }()
 
+        buttonContainer = {
+            let stack = UIStackView()
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .equalSpacing
+
+            return stack
+        }()
+
         startButton = {
-            let view = UIButton()
+            let view = CircleButton(circleColor: .systemBlue, disabledColor: .systemRed)
             view.isEnabled = false
             view.setTitle("Start", for: .normal)
-            view.setTitleColor(view.tintColor, for: .normal)
-            view.setTitleColor(.systemRed, for: .disabled)
+            view.setTitleColor(.white, for: .normal)
 
             return view
         }()
@@ -90,10 +100,11 @@ final class WarSetupView: BaseView {
 
         playersSelectionContainer.addArrangedSubview(playersLabel)
         playersSelectionContainer.addArrangedSubview(playersFieldSelector)
+        buttonContainer.addArrangedSubview(startButton)
 
         addSubview(playersSelectionContainer)
         addSubview(playerNamesContainerView)
-        addSubview(startButton)
+        addSubview(buttonContainer)
     }
 
     override func constructSubviewLayoutConstraints() {
@@ -101,19 +112,26 @@ final class WarSetupView: BaseView {
 
         playersSelectionContainer.translatesAutoresizingMaskIntoConstraints = false
         playerNamesContainerView.translatesAutoresizingMaskIntoConstraints = false
+        buttonContainer.translatesAutoresizingMaskIntoConstraints = false
         startButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             playersSelectionContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Layout.margin),
             playersSelectionContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Layout.margin),
             playersSelectionContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -Layout.margin),
+
             playerNamesContainerView.topAnchor.constraint(equalTo: playersSelectionContainer.bottomAnchor, constant: Layout.margin),
             playerNamesContainerView.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
             playerNamesContainerView.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
-            startButton.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor),
-            startButton.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
-            startButton.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
-            startButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+
+            buttonContainer.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor),
+            buttonContainer.leadingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.leadingAnchor),
+            buttonContainer.trailingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.trailingAnchor),
+            buttonContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            buttonContainer.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+
+            startButton.heightAnchor.constraint(equalToConstant: Layout.buttonSize),
+            startButton.widthAnchor.constraint(equalTo: startButton.heightAnchor)
         ])
     }
 
@@ -125,6 +143,7 @@ final class WarSetupView: BaseView {
     }
 
     func resignAllResponders() {
+        playersFieldSelector.resignFirstResponder()
         playerNamesContainerView.arrangedSubviews.forEach { labeledTextField in
             labeledTextField.subviews.forEach({ $0.resignFirstResponder() })
         }

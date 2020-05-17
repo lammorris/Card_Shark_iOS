@@ -44,13 +44,24 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
 
         title = "War"
         navigationItem.largeTitleDisplayMode = .automatic
+
+        addGestures()
     }
 
     // MARK: - Private Methods
 
     @objc private func didTapStart() {
-        rootView.resignAllResponders()
+        resignResponders()
         delegate?.warSetupViewController(self, didComplete: Array(players.values))
+    }
+
+    @objc private func resignResponders() {
+        rootView.resignAllResponders()
+    }
+
+    private func addGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(resignResponders))
+        rootView.addGestureRecognizer(tapGesture)
     }
 }
 
@@ -68,15 +79,11 @@ extension WarSetupViewController: UITextFieldDelegate {
             return
         }
 
-        if players.count == rootView.selectedNumberOfPlayers {
-            rootView.startButton.isEnabled = true
-        }
-
         players[textField.hashValue] = name
+        rootView.startButton.isEnabled = players.count == rootView.selectedNumberOfPlayers
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        return textField.resignFirstResponder()
     }
 }
