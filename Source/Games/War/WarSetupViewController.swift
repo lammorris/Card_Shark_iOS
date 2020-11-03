@@ -31,6 +31,20 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
         if let defaultPlayers = rangeOfPlayers.first {
             rootView.update(playersCount: defaultPlayers)
         }
+
+        NotificationCenter.default.addObserver(
+            rootView,
+            selector: #selector(rootView.keyboardFrameDidChange),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            rootView,
+            selector: #selector(rootView.keyboardFrameDidChange),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +58,8 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
 
         title = "War"
         navigationItem.largeTitleDisplayMode = .automatic
+
+        addGestures()
     }
 
     // MARK: - Private Methods
@@ -51,6 +67,11 @@ final class WarSetupViewController: BaseViewController<WarSetupView> {
     @objc private func didTapStart() {
         rootView.resignAllResponders()
         delegate?.warSetupViewController(self, didComplete: Array(players.values))
+    }
+
+    private func addGestures() {
+        let tapGesture = UITapGestureRecognizer(target: rootView, action: #selector(rootView.resignAllResponders))
+        rootView.addGestureRecognizer(tapGesture)
     }
 }
 
@@ -68,15 +89,11 @@ extension WarSetupViewController: UITextFieldDelegate {
             return
         }
 
-        if players.count == rootView.selectedNumberOfPlayers {
-            rootView.startButton.isEnabled = true
-        }
-
         players[textField.hashValue] = name
+        rootView.startButton.isEnabled = players.count == rootView.selectedNumberOfPlayers
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        return textField.resignFirstResponder()
     }
 }

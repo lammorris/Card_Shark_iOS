@@ -17,6 +17,7 @@ final class WarSetupView: BaseView {
         static let containerSpacing: CGFloat = 8.0
         static let margin: CGFloat = 20
         static let animationTiming: TimeInterval = TimeInterval(exactly: 0.5)!
+        static let buttonSize: CGFloat = 72
     }
 
     // MARK: - Properties
@@ -33,6 +34,9 @@ final class WarSetupView: BaseView {
     private let playersLabel: UILabel
     private let playersFieldSelector: NumberPickerTextField
     private let playerNamesContainerView: UIStackView
+    private let buttonContainer: UIStackView
+
+    private var bottomConstraint: NSLayoutConstraint?
 
     // MARK: - Initialization
 
@@ -66,12 +70,20 @@ final class WarSetupView: BaseView {
             return view
         }()
 
+        buttonContainer = {
+            let stack = UIStackView()
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .equalSpacing
+
+            return stack
+        }()
+
         startButton = {
-            let view = UIButton()
+            let view = CircleButton(circleColor: .systemBlue, disabledColor: .systemRed)
             view.isEnabled = false
             view.setTitle("Start", for: .normal)
-            view.setTitleColor(view.tintColor, for: .normal)
-            view.setTitleColor(.systemRed, for: .disabled)
+            view.setTitleColor(.white, for: .normal)
 
             return view
         }()
@@ -90,10 +102,11 @@ final class WarSetupView: BaseView {
 
         playersSelectionContainer.addArrangedSubview(playersLabel)
         playersSelectionContainer.addArrangedSubview(playersFieldSelector)
+        buttonContainer.addArrangedSubview(startButton)
 
         addSubview(playersSelectionContainer)
         addSubview(playerNamesContainerView)
-        addSubview(startButton)
+        addSubview(buttonContainer)
     }
 
     override func constructSubviewLayoutConstraints() {
@@ -101,19 +114,28 @@ final class WarSetupView: BaseView {
 
         playersSelectionContainer.translatesAutoresizingMaskIntoConstraints = false
         playerNamesContainerView.translatesAutoresizingMaskIntoConstraints = false
+        buttonContainer.translatesAutoresizingMaskIntoConstraints = false
         startButton.translatesAutoresizingMaskIntoConstraints = false
+
+        bottomConstraint = buttonContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
 
         NSLayoutConstraint.activate([
             playersSelectionContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Layout.margin),
             playersSelectionContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Layout.margin),
             playersSelectionContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -Layout.margin),
+
             playerNamesContainerView.topAnchor.constraint(equalTo: playersSelectionContainer.bottomAnchor, constant: Layout.margin),
             playerNamesContainerView.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
             playerNamesContainerView.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
-            startButton.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor),
-            startButton.leadingAnchor.constraint(equalTo: playersSelectionContainer.leadingAnchor),
-            startButton.trailingAnchor.constraint(equalTo: playersSelectionContainer.trailingAnchor),
-            startButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+
+            buttonContainer.topAnchor.constraint(greaterThanOrEqualTo: playerNamesContainerView.bottomAnchor, constant: Layout.containerSpacing),
+            buttonContainer.leadingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.leadingAnchor),
+            buttonContainer.trailingAnchor.constraint(lessThanOrEqualTo: playersSelectionContainer.trailingAnchor),
+            bottomConstraint!,
+            buttonContainer.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+
+            startButton.heightAnchor.constraint(equalToConstant: Layout.buttonSize),
+            startButton.widthAnchor.constraint(equalTo: startButton.heightAnchor)
         ])
     }
 
@@ -124,9 +146,33 @@ final class WarSetupView: BaseView {
         animateShowPlayerLabels(numberOfPlayers: playersCount)
     }
 
-    func resignAllResponders() {
+    @objc func resignAllResponders() {
+        playersFieldSelector.resignFirstResponder()
         playerNamesContainerView.arrangedSubviews.forEach { labeledTextField in
             labeledTextField.subviews.forEach({ $0.resignFirstResponder() })
+        }
+    }
+
+    @objc func keyboardFrameDidChange(notification: NSNotification) {
+        guard
+            let info = notification.userInfo,
+            let animationDuration = (info[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
+        else { return }
+
+        if
+            notification.name == UIResponder.keyboardWillShowNotification,
+            let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
+            bottomConstraint?.constant == 0
+        {
+            self.bottomConstraint?.constant = -keyboardHeight
+            UIView.animate(withDuration: animationDuration) {
+                self.layoutIfNeeded()
+            }
+        } else if notification.name == UIResponder.keyboardWillHideNotification {
+            self.bottomConstraint?.constant = 0
+            UIView.animate(withDuration: animationDuration) {
+                self.layoutIfNeeded()
+            }
         }
     }
 
